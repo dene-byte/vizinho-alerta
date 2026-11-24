@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vizinho Alerta: comunicação e colaboração para uma comunidade mais segura.">
+    <title>Vizinho Alerta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Vizinho Alerta</h1>
+        <p>Uma comunidade mais segura começa com a união.</p>
+    </header>
+
+    <main>
+
+        <!-- TELA INICIAL -->
+        <section id="pagina-inicio">
+
+            <section class="boas-vindas">
+                <h2>Bem-vindo!</h2>
+                <p>
+                    Este espaço foi criado para aproximar os moradores
+                    e facilitar a comunicação sobre situações no bairro.
+                </p>
+            </section>
+
+            <section class="acoes">
+                <h2>Como podemos ajudar?</h2>
+
+                <button id="botao-cadastrar" type="button">
+                    Registrar um alerta
+                </button>
+
+                <button id="botao-consultar" type="button">
+                    Consultar alertas do bairro
+                </button>
+
+                <button id="botao-administracao" type="button">
+                    Área administrativa
+                </button>
+            </section>
+
+            <section class="orientacao">
+                <h2>Em caso de emergência</h2>
+                <p>
+                    Não confronte pessoas ou situações suspeitas.
+                    Procure um local seguro e acione os serviços oficiais.
+                </p>
+                <p>
+                    Polícia Militar: 190 |
+                    SAMU: 192 |
+                    Bombeiros: 193
+                </p>
+            </section>
+
+            <!-- ORIENTAÇÕES PARA A COMUNIDADE -->
+            <section class="orientacoes-comunidade">
+                <h2>Orientações para uma comunidade mais segura</h2>
+
+                <p>
+                    Pequenas atitudes ajudam a construir um bairro
+                    mais organizado, consciente e colaborativo.
+                </p>
+
+                <div class="grade-orientacoes">
+
+                    <article class="cartao-orientacao">
+                        <span class="icone-orientacao" aria-hidden="true">🏠</span>
+                        <h3>Segurança em casa</h3>
+                        <p>
+                            Mantenha a atenção no dia a dia e compartilhe
+                            informações responsáveis com os vizinhos.
+                        </p>
+                    </article>
+
+                    <article class="cartao-orientacao">
+                        <span class="icone-orientacao" aria-hidden="true">💡</span>
+                        <h3>Iluminação e infraestrutura</h3>
+                        <p>
+                            Comunique problemas como postes apagados,
+                            buracos e dificuldades nas ruas.
+                        </p>
+                    </article>
+
+                    <article class="cartao-orientacao">
+                        <span class="icone-orientacao" aria-hidden="true">♻️</span>
+                        <h3>Meio ambiente e limpeza</h3>
+                        <p>
+                            Colabore com o descarte correto de resíduos
+                            e a conservação dos espaços comuns.
+                        </p>
+                    </article>
+
+                    <article class="cartao-orientacao">
+                        <span class="icone-orientacao" aria-hidden="true">🤝</span>
+                        <h3>Ajuda comunitária</h3>
+                        <p>
+                            Incentive o respeito, a solidariedade
+                            e o apoio entre os moradores.
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+
+        </section>
+
+        <!-- TELA DE CADASTRO -->
+        <section id="pagina-cadastro" hidden>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                ← Voltar ao início
+            </button>
+
+            <h2>Registrar um alerta</h2>
+
+            <p class="introducao-formulario">
+                Preencha as etapas abaixo para comunicar uma situação
+                observada no seu bairro.
+            </p>
+
+            <form id="form-alerta">
+
+                <div class="etapa-formulario">
+                    <h3>1. Tipo de alerta</h3>
+                    <p>
+                        Escolha a categoria e depois selecione
+                        a situação que deseja comunicar.
+                    </p>
+
+                    <label for="categoria">Categoria da situação</label>
+
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Segurança">Segurança</option>
+                        <option value="Infraestrutura">Iluminação e infraestrutura</option>
+                        <option value="Meio ambiente">Meio ambiente e limpeza</option>
+                        <option value="Ajuda comunitária">Ajuda comunitária</option>
+                        <option value="Outra">Outras situações</option>
+                    </select>
+
+                    <label for="situacao">
+                        Qual situação deseja comunicar?
+                    </label>
+
+                    <select id="situacao" name="situacao" required disabled>
+                        <option value="">Primeiro selecione uma categoria</option>
+                    </select>
+                </div>
+
+                <div class="etapa-formulario">
+                    <h3>2. Identificação do alerta</h3>
+                    <p>
+                        O título será preenchido automaticamente
+                        conforme a situação escolhida.
+                    </p>
+
+                    <label for="titulo">Título do alerta</label>
+
+                    <input
+                        id="titulo"
+                        name="titulo"
+                        required
+                        minlength="3"
+                        maxlength="150"
+                        placeholder="Será preenchido automaticamente"
+                        readonly
+                    >
+                </div>
+
+                <div class="etapa-formulario">
+                    <h3>3. Quando aconteceu?</h3>
+                    <p>
+                        Informe a data e o horário aproximado,
+                        caso tenha essas informações.
+                    </p>
+
+                    <label for="data_ocorrencia">
+                        Data da ocorrência
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data_ocorrencia"
+                        name="data_ocorrencia"
+                    >
+
+                    <label for="horario_aproximado">
+                        Horário aproximado
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horario_aproximado"
+                        name="horario_aproximado"
+                    >
+                </div>
+
+                <div class="etapa-formulario">
+                    <h3>4. Onde aconteceu?</h3>
+                    <p>
+                        Informe o bairro e, se possível,
+                        um ponto de referência.
+                    </p>
+
+                    <label for="bairro">Bairro</label>
+
+                    <input
+                        id="bairro"
+                        name="bairro"
+                        required
+                        minlength="2"
+                        maxlength="100"
+                        placeholder="Nome do bairro"
+                    >
+
+                    <label for="local_referencia">
+                        Local ou ponto de referência
+                    </label>
+
+                    <input
+                        id="local_referencia"
+                        name="local_referencia"
+                        maxlength="150"
+                        placeholder="Ex.: próximo à praça ou escola"
+                    >
+                </div>
+
+                <div class="etapa-formulario">
+                    <h3>5. Conte o que aconteceu</h3>
+                    <p>
+                        Descreva o que aconteceu ou o que você observou.
+                        Não se coloque em risco para obter informações.
+                    </p>
+
+                    <label for="descricao">
+                        Descrição da situação
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        name="descricao"
+                        required
+                        minlength="5"
+                        placeholder="Descreva a situação observada"
+                    ></textarea>
+
+                    <button type="button" id="botao-ditado">
+                        🎤 Ditar descrição por voz
+                    </button>
+
+                    <p
+                        id="mensagem-voz"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </div>
+
+                <div class="envio-formulario">
+                    <p>Confira as informações antes de enviar.</p>
+                    <button type="submit">Enviar alerta</button>
+                </div>
+
+            </form>
+
+            <p
+                id="mensagem-formulario"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                Voltar ao início
+            </button>
+
+        </section>
+
+        <!-- TELA DE CONSULTA -->
+        <section id="pagina-consulta" hidden>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                ← Voltar ao início
+            </button>
+
+            <h2>Alertas do bairro</h2>
+
+            <div id="lista-alertas" aria-live="polite">
+                <p>Carregando alertas...</p>
+            </div>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                Voltar ao início
+            </button>
+
+        </section>
+
+        <!-- TELA DE LOGIN ADMINISTRATIVO -->
+        <section id="pagina-login-admin" hidden>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                ← Voltar ao início
+            </button>
+
+            <h2>Acesso administrativo</h2>
+
+            <p>
+                Esta área é destinada exclusivamente à administração
+                do Vizinho Alerta.
+            </p>
+
+            <form id="form-login-admin">
+
+                <label for="admin-usuario">Usuário</label>
+
+                <input
+                    type="text"
+                    id="admin-usuario"
+                    name="username"
+                    required
+                    autocomplete="username"
+                    placeholder="Digite seu usuário"
+                >
+
+                <label for="admin-senha">Senha</label>
+
+                <input
+                    type="password"
+                    id="admin-senha"
+                    name="password"
+                    required
+                    autocomplete="current-password"
+                    placeholder="Digite sua senha"
+                >
+
+                <button type="submit" id="botao-login-admin">
+                    Entrar no painel
+                </button>
+
+            </form>
+
+            <p
+                id="mensagem-login-admin"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <button
+                type="button"
+                class="botao-voltar"
+                data-tela="inicio"
+            >
+                Voltar ao início
+            </button>
+
+        </section>
+
+        <!-- PAINEL ADMINISTRATIVO -->
+        <section id="pagina-admin" hidden>
+
+            <h2>Painel administrativo</h2>
+
+            <p>
+                Aqui você poderá analisar os alertas enviados pelos
+                moradores e decidir quais serão publicados.
+            </p>
+
+            <div class="resumo-admin">
+                <h3>Moderação dos alertas</h3>
+                <p>
+                    Os alertas recebidos ficam pendentes até a avaliação
+                    e aprovação da administração.
+                </p>
+            </div>
+
+            <div id="lista-alertas-admin" aria-live="polite">
+                <p>Carregando alertas para análise...</p>
+            </div>
+
+            <button type="button" id="botao-atualizar-admin">
+                Atualizar alertas
+            </button>
+
+            <button type="button" id="botao-sair-admin">
+                Sair da administração
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Projeto comunitário Vizinho Alerta</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

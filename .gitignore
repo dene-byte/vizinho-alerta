@@ -1,0 +1,31 @@
+# Arquivos com senhas e configurações privadas
+.env
+**/.env
+
+# Ambientes virtuais Python
+.venv/
+**/.venv/
+
+# Arquivos temporários Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+**/.pytest_cache/
+
+# Backups de banco de dados
+backup/
+**/backup/
+*.backup
+*.dump
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Cópias de segurança mantidas somente no computador
+frontend/css/style_backup.css
+frontend/index_backup.html
+frontend/index_backup_antes_orientacoes.html
+frontend/js/app_backup_antes_exclusao.js
